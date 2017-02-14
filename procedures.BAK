@@ -257,7 +257,7 @@ CASE TYPE('a')='C'
 &temp=""
 ENDCASE
 
-&formname..editar=2
+
 
 ENDIF
 

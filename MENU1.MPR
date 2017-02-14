@@ -1,6 +1,6 @@
 *       *********************************************************
 *       *                                                         
-*       * 02/10/17              MENU1.MPR               10:59:08  
+*       * 02/14/17              MENU1.MPR               15:43:44  
 *       *                                                         
 *       *********************************************************
 *       *                                                         
@@ -138,20 +138,20 @@ IF m.lHasNewMenu
 	DEFINE MENU (m.cMenuName) IN (m.oFormRef.Name) BAR
 ENDIF
 
-DEFINE PAD _4ug0njnvy OF (m.cMenuName) PROMPT "Inicio" COLOR SCHEME 3 ;
+DEFINE PAD _4uk0xpngb OF (m.cMenuName) PROMPT "Inicio" COLOR SCHEME 3 ;
 	KEY ALT+I, ""
-DEFINE PAD _4ug0njnvz OF (m.cMenuName) PROMPT "Procesos" COLOR SCHEME 3 ;
+DEFINE PAD _4uk0xpngc OF (m.cMenuName) PROMPT "Procesos" COLOR SCHEME 3 ;
 	KEY ALT+P, ""
-DEFINE PAD _4ug0njnw0 OF (m.cMenuName) PROMPT "Ventas" COLOR SCHEME 3 ;
+DEFINE PAD _4uk0xpngd OF (m.cMenuName) PROMPT "Ventas" COLOR SCHEME 3 ;
 	KEY ALT+V, ""
-DEFINE PAD _4ug0njnw1 OF (m.cMenuName) PROMPT "Reportes" COLOR SCHEME 3 ;
+DEFINE PAD _4uk0xpnge OF (m.cMenuName) PROMPT "Reportes" COLOR SCHEME 3 ;
 	KEY ALT+R, ""
-DEFINE PAD _4ug0njnw2 OF (m.cMenuName) PROMPT "Ayuda" COLOR SCHEME 3 ;
+DEFINE PAD _4uk0xpngf OF (m.cMenuName) PROMPT "Ayuda" COLOR SCHEME 3 ;
 	KEY ALT+A, ""
-ON PAD _4ug0njnvy OF (m.cMenuName) ACTIVATE POPUP (a_menupops[1])
-ON PAD _4ug0njnvz OF (m.cMenuName) ACTIVATE POPUP (a_menupops[5])
-ON PAD _4ug0njnw0 OF (m.cMenuName) ACTIVATE POPUP (a_menupops[6])
-ON PAD _4ug0njnw1 OF (m.cMenuName) ACTIVATE POPUP (a_menupops[10])
+ON PAD _4uk0xpngb OF (m.cMenuName) ACTIVATE POPUP (a_menupops[1])
+ON PAD _4uk0xpngc OF (m.cMenuName) ACTIVATE POPUP (a_menupops[5])
+ON PAD _4uk0xpngd OF (m.cMenuName) ACTIVATE POPUP (a_menupops[6])
+ON PAD _4uk0xpnge OF (m.cMenuName) ACTIVATE POPUP (a_menupops[10])
 
 DEFINE POPUP (a_menupops[1]) MARGIN RELATIVE SHADOW COLOR SCHEME 4
 DEFINE BAR 1 OF (a_menupops[1]) PROMPT "Nuevo"
@@ -170,46 +170,46 @@ DEFINE BAR 4 OF (a_menupops[2]) PROMPT "Productos"
 DEFINE BAR 5 OF (a_menupops[2]) PROMPT "Banco"
 DEFINE BAR 6 OF (a_menupops[2]) PROMPT "Cuenta Bancaria"
 ON SELECTION BAR 1 OF (a_menupops[2]) ;
-	DO _4ug0njnw3 ;
+	DO _4uk0xpngv ;
 	IN LOCFILE("\COLEGIO\MENU1" ,"MPX;MPR|FXP;PRG" ,"WHERE is MENU1?")
 ON SELECTION BAR 2 OF (a_menupops[2]) ;
-	DO _4ug0njnw4 ;
+	DO _4uk0xpngw ;
 	IN LOCFILE("\COLEGIO\MENU1" ,"MPX;MPR|FXP;PRG" ,"WHERE is MENU1?")
 ON SELECTION BAR 3 OF (a_menupops[2]) ;
-	DO _4ug0njnw5 ;
+	DO _4uk0xpngx ;
 	IN LOCFILE("\COLEGIO\MENU1" ,"MPX;MPR|FXP;PRG" ,"WHERE is MENU1?")
 ON BAR 4 OF (a_menupops[2]) ACTIVATE POPUP (a_menupops[3])
 ON SELECTION BAR 5 OF (a_menupops[2]) ;
-	DO _4ug0njnw6 ;
+	DO _4uk0xpngy ;
 	IN LOCFILE("\COLEGIO\MENU1" ,"MPX;MPR|FXP;PRG" ,"WHERE is MENU1?")
 ON SELECTION BAR 6 OF (a_menupops[2]) ;
-	DO _4ug0njnw7 ;
+	DO _4uk0xpngz ;
 	IN LOCFILE("\COLEGIO\MENU1" ,"MPX;MPR|FXP;PRG" ,"WHERE is MENU1?")
 
 DEFINE POPUP (a_menupops[3]) MARGIN RELATIVE SHADOW COLOR SCHEME 4
 DEFINE BAR 1 OF (a_menupops[3]) PROMPT "Crear Producto"
 DEFINE BAR 2 OF (a_menupops[3]) PROMPT "Crear grupo"
 ON SELECTION BAR 1 OF (a_menupops[3]) ;
-	DO _4ug0njnw8 ;
+	DO _4uk0xpnh0 ;
 	IN LOCFILE("\COLEGIO\MENU1" ,"MPX;MPR|FXP;PRG" ,"WHERE is MENU1?")
 ON SELECTION BAR 2 OF (a_menupops[3]) ;
-	DO _4ug0njnw9 ;
+	DO _4uk0xpnh1 ;
 	IN LOCFILE("\COLEGIO\MENU1" ,"MPX;MPR|FXP;PRG" ,"WHERE is MENU1?")
 
 DEFINE POPUP (a_menupops[4]) MARGIN RELATIVE SHADOW COLOR SCHEME 4
 DEFINE BAR 1 OF (a_menupops[4]) PROMPT "Periodo"
 ON SELECTION BAR 1 OF (a_menupops[4]) ;
-	DO _4ug0njnwa ;
+	DO _4uk0xpnh2 ;
 	IN LOCFILE("\COLEGIO\MENU1" ,"MPX;MPR|FXP;PRG" ,"WHERE is MENU1?")
 
 DEFINE POPUP (a_menupops[5]) MARGIN RELATIVE SHADOW COLOR SCHEME 4
 DEFINE BAR 1 OF (a_menupops[5]) PROMPT "Inscripcion"
 DEFINE BAR 2 OF (a_menupops[5]) PROMPT "Cambio de Costos"
 ON SELECTION BAR 1 OF (a_menupops[5]) ;
-	DO _4ug0njnwb ;
+	DO _4uk0xpnh3 ;
 	IN LOCFILE("\COLEGIO\MENU1" ,"MPX;MPR|FXP;PRG" ,"WHERE is MENU1?")
 ON SELECTION BAR 2 OF (a_menupops[5]) ;
-	DO _4ug0njnwc ;
+	DO _4uk0xpnh4 ;
 	IN LOCFILE("\COLEGIO\MENU1" ,"MPX;MPR|FXP;PRG" ,"WHERE is MENU1?")
 
 DEFINE POPUP (a_menupops[6]) MARGIN RELATIVE SHADOW COLOR SCHEME 4
@@ -220,13 +220,13 @@ DEFINE BAR 4 OF (a_menupops[6]) PROMPT "\-"
 DEFINE BAR 5 OF (a_menupops[6]) PROMPT "Notas/Anulaciones"
 DEFINE BAR 6 OF (a_menupops[6]) PROMPT "Inventario"
 ON SELECTION BAR 1 OF (a_menupops[6]) ;
-	DO _4ug0njnwd ;
+	DO _4uk0xpnh5 ;
 	IN LOCFILE("\COLEGIO\MENU1" ,"MPX;MPR|FXP;PRG" ,"WHERE is MENU1?")
 ON SELECTION BAR 2 OF (a_menupops[6]) ;
-	DO _4ug0njnwe ;
+	DO _4uk0xpnh6 ;
 	IN LOCFILE("\COLEGIO\MENU1" ,"MPX;MPR|FXP;PRG" ,"WHERE is MENU1?")
 ON SELECTION BAR 3 OF (a_menupops[6]) ;
-	DO _4ug0njnwf ;
+	DO _4uk0xpnh7 ;
 	IN LOCFILE("\COLEGIO\MENU1" ,"MPX;MPR|FXP;PRG" ,"WHERE is MENU1?")
 ON BAR 5 OF (a_menupops[6]) ACTIVATE POPUP (a_menupops[7])
 ON BAR 6 OF (a_menupops[6]) ACTIVATE POPUP (a_menupops[9])
@@ -238,29 +238,29 @@ DEFINE BAR 3 OF (a_menupops[7]) PROMPT "Inscripcion"
 DEFINE BAR 4 OF (a_menupops[7]) PROMPT "Solvencia"
 ON BAR 1 OF (a_menupops[7]) ACTIVATE POPUP (a_menupops[8])
 ON SELECTION BAR 2 OF (a_menupops[7]) ;
-	DO _4ug0njnwg ;
+	DO _4uk0xpnh8 ;
 	IN LOCFILE("\COLEGIO\MENU1" ,"MPX;MPR|FXP;PRG" ,"WHERE is MENU1?")
 ON SELECTION BAR 3 OF (a_menupops[7]) ;
-	DO _4ug0njnwh ;
+	DO _4uk0xpnh9 ;
 	IN LOCFILE("\COLEGIO\MENU1" ,"MPX;MPR|FXP;PRG" ,"WHERE is MENU1?")
 ON SELECTION BAR 4 OF (a_menupops[7]) ;
-	DO _4ug0njnwi ;
+	DO _4uk0xpnha ;
 	IN LOCFILE("\COLEGIO\MENU1" ,"MPX;MPR|FXP;PRG" ,"WHERE is MENU1?")
 
 DEFINE POPUP (a_menupops[8]) MARGIN RELATIVE SHADOW COLOR SCHEME 4
 DEFINE BAR 1 OF (a_menupops[8]) PROMPT "Por Factura"
 DEFINE BAR 2 OF (a_menupops[8]) PROMPT "Por Alumno"
 ON SELECTION BAR 1 OF (a_menupops[8]) ;
-	DO _4ug0njnwj ;
+	DO _4uk0xpnhb ;
 	IN LOCFILE("\COLEGIO\MENU1" ,"MPX;MPR|FXP;PRG" ,"WHERE is MENU1?")
 ON SELECTION BAR 2 OF (a_menupops[8]) ;
-	DO _4ug0njnwk ;
+	DO _4uk0xpnhc ;
 	IN LOCFILE("\COLEGIO\MENU1" ,"MPX;MPR|FXP;PRG" ,"WHERE is MENU1?")
 
 DEFINE POPUP (a_menupops[9]) MARGIN RELATIVE SHADOW COLOR SCHEME 4
 DEFINE BAR 1 OF (a_menupops[9]) PROMPT "Entrada/Salida"
 ON SELECTION BAR 1 OF (a_menupops[9]) ;
-	DO _4ug0njnwl ;
+	DO _4uk0xpnhd ;
 	IN LOCFILE("\COLEGIO\MENU1" ,"MPX;MPR|FXP;PRG" ,"WHERE is MENU1?")
 
 DEFINE POPUP (a_menupops[10]) MARGIN RELATIVE SHADOW COLOR SCHEME 4
@@ -277,16 +277,16 @@ DEFINE BAR 2 OF (a_menupops[11]) PROMPT "Morosos"
 DEFINE BAR 3 OF (a_menupops[11]) PROMPT "Recordatorio"
 DEFINE BAR 4 OF (a_menupops[11]) PROMPT "Saldos"
 ON SELECTION BAR 1 OF (a_menupops[11]) ;
-	DO _4ug0njnwm ;
+	DO _4uk0xpnhe ;
 	IN LOCFILE("\COLEGIO\MENU1" ,"MPX;MPR|FXP;PRG" ,"WHERE is MENU1?")
 ON SELECTION BAR 2 OF (a_menupops[11]) ;
-	DO _4ug0njnwn ;
+	DO _4uk0xpnhf ;
 	IN LOCFILE("\COLEGIO\MENU1" ,"MPX;MPR|FXP;PRG" ,"WHERE is MENU1?")
 ON SELECTION BAR 3 OF (a_menupops[11]) ;
-	DO _4ug0njnwo ;
+	DO _4uk0xpnhg ;
 	IN LOCFILE("\COLEGIO\MENU1" ,"MPX;MPR|FXP;PRG" ,"WHERE is MENU1?")
 ON SELECTION BAR 4 OF (a_menupops[11]) ;
-	DO _4ug0njnwp ;
+	DO _4uk0xpnhh ;
 	IN LOCFILE("\COLEGIO\MENU1" ,"MPX;MPR|FXP;PRG" ,"WHERE is MENU1?")
 
 DEFINE POPUP (a_menupops[12]) MARGIN RELATIVE SHADOW COLOR SCHEME 4
@@ -294,13 +294,13 @@ DEFINE BAR 1 OF (a_menupops[12]) PROMPT "Ingresos a bancos"
 DEFINE BAR 2 OF (a_menupops[12]) PROMPT "Reporte general de ventas"
 DEFINE BAR 3 OF (a_menupops[12]) PROMPT "Reporte general de productos"
 ON SELECTION BAR 1 OF (a_menupops[12]) ;
-	DO _4ug0njnwq ;
+	DO _4uk0xpnhi ;
 	IN LOCFILE("\COLEGIO\MENU1" ,"MPX;MPR|FXP;PRG" ,"WHERE is MENU1?")
 ON SELECTION BAR 2 OF (a_menupops[12]) ;
-	DO _4ug0njnwr ;
+	DO _4uk0xpnhj ;
 	IN LOCFILE("\COLEGIO\MENU1" ,"MPX;MPR|FXP;PRG" ,"WHERE is MENU1?")
 ON SELECTION BAR 3 OF (a_menupops[12]) ;
-	DO _4ug0njnws ;
+	DO _4uk0xpnhk ;
 	IN LOCFILE("\COLEGIO\MENU1" ,"MPX;MPR|FXP;PRG" ,"WHERE is MENU1?")
 
 DEFINE POPUP (a_menupops[13]) MARGIN RELATIVE SHADOW COLOR SCHEME 4
@@ -308,13 +308,13 @@ DEFINE BAR 1 OF (a_menupops[13]) PROMPT "Factura"
 DEFINE BAR 2 OF (a_menupops[13]) PROMPT "Nota de Credito"
 DEFINE BAR 3 OF (a_menupops[13]) PROMPT "Nota de Debito"
 ON SELECTION BAR 1 OF (a_menupops[13]) ;
-	DO _4ug0njnwt ;
+	DO _4uk0xpnhl ;
 	IN LOCFILE("\COLEGIO\MENU1" ,"MPX;MPR|FXP;PRG" ,"WHERE is MENU1?")
 ON SELECTION BAR 2 OF (a_menupops[13]) ;
-	DO _4ug0njnwu ;
+	DO _4uk0xpnhm ;
 	IN LOCFILE("\COLEGIO\MENU1" ,"MPX;MPR|FXP;PRG" ,"WHERE is MENU1?")
 ON SELECTION BAR 3 OF (a_menupops[13]) ;
-	DO _4ug0njnwv ;
+	DO _4uk0xpnhn ;
 	IN LOCFILE("\COLEGIO\MENU1" ,"MPX;MPR|FXP;PRG" ,"WHERE is MENU1?")
 
 ACTIVATE MENU (m.cMenuName) NOWAIT
@@ -327,7 +327,7 @@ ENDIF
 
 *       *********************************************************
 *       *                                                         
-*       * _4UG0NJNW3  ON SELECTION BAR 1 OF POPUP nuevo           
+*       * _4UK0XPNGV  ON SELECTION BAR 1 OF POPUP nuevo           
 *       *                                                         
 *       * Procedure Origin:                                       
 *       *                                                         
@@ -338,13 +338,13 @@ ENDIF
 *       *                                                         
 *       *********************************************************
 *
-PROCEDURE _4ug0njnw3
+PROCEDURE _4uk0xpngv
 abrirform("frmalumno")
 
 
 *       *********************************************************
 *       *                                                         
-*       * _4UG0NJNW4  ON SELECTION BAR 2 OF POPUP nuevo           
+*       * _4UK0XPNGW  ON SELECTION BAR 2 OF POPUP nuevo           
 *       *                                                         
 *       * Procedure Origin:                                       
 *       *                                                         
@@ -355,13 +355,13 @@ abrirform("frmalumno")
 *       *                                                         
 *       *********************************************************
 *
-PROCEDURE _4ug0njnw4
+PROCEDURE _4uk0xpngw
 abrirform("grados")
 
 
 *       *********************************************************
 *       *                                                         
-*       * _4UG0NJNW5  ON SELECTION BAR 3 OF POPUP nuevo           
+*       * _4UK0XPNGX  ON SELECTION BAR 3 OF POPUP nuevo           
 *       *                                                         
 *       * Procedure Origin:                                       
 *       *                                                         
@@ -372,13 +372,13 @@ abrirform("grados")
 *       *                                                         
 *       *********************************************************
 *
-PROCEDURE _4ug0njnw5
+PROCEDURE _4uk0xpngx
 abrirform("secciones")
 
 
 *       *********************************************************
 *       *                                                         
-*       * _4UG0NJNW6  ON SELECTION BAR 5 OF POPUP nuevo           
+*       * _4UK0XPNGY  ON SELECTION BAR 5 OF POPUP nuevo           
 *       *                                                         
 *       * Procedure Origin:                                       
 *       *                                                         
@@ -389,13 +389,13 @@ abrirform("secciones")
 *       *                                                         
 *       *********************************************************
 *
-PROCEDURE _4ug0njnw6
+PROCEDURE _4uk0xpngy
 abrirform("frmbanco")
 
 
 *       *********************************************************
 *       *                                                         
-*       * _4UG0NJNW7  ON SELECTION BAR 6 OF POPUP nuevo           
+*       * _4UK0XPNGZ  ON SELECTION BAR 6 OF POPUP nuevo           
 *       *                                                         
 *       * Procedure Origin:                                       
 *       *                                                         
@@ -406,13 +406,13 @@ abrirform("frmbanco")
 *       *                                                         
 *       *********************************************************
 *
-PROCEDURE _4ug0njnw7
+PROCEDURE _4uk0xpngz
 abrirform("frmcuenta")
 
 
 *       *********************************************************
 *       *                                                         
-*       * _4UG0NJNW8  ON SELECTION BAR 1 OF POPUP productos       
+*       * _4UK0XPNH0  ON SELECTION BAR 1 OF POPUP productos       
 *       *                                                         
 *       * Procedure Origin:                                       
 *       *                                                         
@@ -423,13 +423,13 @@ abrirform("frmcuenta")
 *       *                                                         
 *       *********************************************************
 *
-PROCEDURE _4ug0njnw8
+PROCEDURE _4uk0xpnh0
 abrirform("frmproducto")
 
 
 *       *********************************************************
 *       *                                                         
-*       * _4UG0NJNW9  ON SELECTION BAR 2 OF POPUP productos       
+*       * _4UK0XPNH1  ON SELECTION BAR 2 OF POPUP productos       
 *       *                                                         
 *       * Procedure Origin:                                       
 *       *                                                         
@@ -440,13 +440,13 @@ abrirform("frmproducto")
 *       *                                                         
 *       *********************************************************
 *
-PROCEDURE _4ug0njnw9
+PROCEDURE _4uk0xpnh1
 abrirform("frmgrupo")
 
 
 *       *********************************************************
 *       *                                                         
-*       * _4UG0NJNWA  ON SELECTION BAR 1 OF POPUP configurac      
+*       * _4UK0XPNH2  ON SELECTION BAR 1 OF POPUP configurac      
 *       *                                                         
 *       * Procedure Origin:                                       
 *       *                                                         
@@ -457,13 +457,13 @@ abrirform("frmgrupo")
 *       *                                                         
 *       *********************************************************
 *
-PROCEDURE _4ug0njnwa
+PROCEDURE _4uk0xpnh2
 abrirform("frmperiodo")
 
 
 *       *********************************************************
 *       *                                                         
-*       * _4UG0NJNWB  ON SELECTION BAR 1 OF POPUP procesos        
+*       * _4UK0XPNH3  ON SELECTION BAR 1 OF POPUP procesos        
 *       *                                                         
 *       * Procedure Origin:                                       
 *       *                                                         
@@ -474,13 +474,13 @@ abrirform("frmperiodo")
 *       *                                                         
 *       *********************************************************
 *
-PROCEDURE _4ug0njnwb
+PROCEDURE _4uk0xpnh3
 abrirform("frminscripcion")
 
 
 *       *********************************************************
 *       *                                                         
-*       * _4UG0NJNWC  ON SELECTION BAR 2 OF POPUP procesos        
+*       * _4UK0XPNH4  ON SELECTION BAR 2 OF POPUP procesos        
 *       *                                                         
 *       * Procedure Origin:                                       
 *       *                                                         
@@ -491,13 +491,13 @@ abrirform("frminscripcion")
 *       *                                                         
 *       *********************************************************
 *
-PROCEDURE _4ug0njnwc
+PROCEDURE _4uk0xpnh4
 abrirform("frmcambiodecostos")
 
 
 *       *********************************************************
 *       *                                                         
-*       * _4UG0NJNWD  ON SELECTION BAR 1 OF POPUP ventas          
+*       * _4UK0XPNH5  ON SELECTION BAR 1 OF POPUP ventas          
 *       *                                                         
 *       * Procedure Origin:                                       
 *       *                                                         
@@ -508,13 +508,13 @@ abrirform("frmcambiodecostos")
 *       *                                                         
 *       *********************************************************
 *
-PROCEDURE _4ug0njnwd
+PROCEDURE _4uk0xpnh5
 abrirform("frmfacturas")
 
 
 *       *********************************************************
 *       *                                                         
-*       * _4UG0NJNWE  ON SELECTION BAR 2 OF POPUP ventas          
+*       * _4UK0XPNH6  ON SELECTION BAR 2 OF POPUP ventas          
 *       *                                                         
 *       * Procedure Origin:                                       
 *       *                                                         
@@ -525,13 +525,13 @@ abrirform("frmfacturas")
 *       *                                                         
 *       *********************************************************
 *
-PROCEDURE _4ug0njnwe
+PROCEDURE _4uk0xpnh6
 abrirform("frmsaldo")
 
 
 *       *********************************************************
 *       *                                                         
-*       * _4UG0NJNWF  ON SELECTION BAR 3 OF POPUP ventas          
+*       * _4UK0XPNH7  ON SELECTION BAR 3 OF POPUP ventas          
 *       *                                                         
 *       * Procedure Origin:                                       
 *       *                                                         
@@ -542,7 +542,7 @@ abrirform("frmsaldo")
 *       *                                                         
 *       *********************************************************
 *
-PROCEDURE _4ug0njnwf
+PROCEDURE _4uk0xpnh7
 SQLEXEC(gnx,"select * from corfisico","corfisico")
 atp=INPUTBOX("Correlativo Actual de las Facturas Fisicas","Correlativo",ALLTRIM(STR(corfisico.idfacturaFisica)))
 ptp=VAL(atp)
@@ -553,7 +553,7 @@ endif
 
 *       *********************************************************
 *       *                                                         
-*       * _4UG0NJNWG  ON SELECTION BAR 2 OF POPUP notasanula      
+*       * _4UK0XPNH8  ON SELECTION BAR 2 OF POPUP notasanula      
 *       *                                                         
 *       * Procedure Origin:                                       
 *       *                                                         
@@ -564,13 +564,13 @@ endif
 *       *                                                         
 *       *********************************************************
 *
-PROCEDURE _4ug0njnwg
+PROCEDURE _4uk0xpnh8
 abrirform("frmnotadedebito")
 
 
 *       *********************************************************
 *       *                                                         
-*       * _4UG0NJNWH  ON SELECTION BAR 3 OF POPUP notasanula      
+*       * _4UK0XPNH9  ON SELECTION BAR 3 OF POPUP notasanula      
 *       *                                                         
 *       * Procedure Origin:                                       
 *       *                                                         
@@ -581,13 +581,13 @@ abrirform("frmnotadedebito")
 *       *                                                         
 *       *********************************************************
 *
-PROCEDURE _4ug0njnwh
+PROCEDURE _4uk0xpnh9
 abrirform("frmanulacionins")
 
 
 *       *********************************************************
 *       *                                                         
-*       * _4UG0NJNWI  ON SELECTION BAR 4 OF POPUP notasanula      
+*       * _4UK0XPNHA  ON SELECTION BAR 4 OF POPUP notasanula      
 *       *                                                         
 *       * Procedure Origin:                                       
 *       *                                                         
@@ -598,13 +598,13 @@ abrirform("frmanulacionins")
 *       *                                                         
 *       *********************************************************
 *
-PROCEDURE _4ug0njnwi
+PROCEDURE _4uk0xpnha
 abrirform("frmsolvencia")
 
 
 *       *********************************************************
 *       *                                                         
-*       * _4UG0NJNWJ  ON SELECTION BAR 1 OF POPUP notadecred      
+*       * _4UK0XPNHB  ON SELECTION BAR 1 OF POPUP notadecred      
 *       *                                                         
 *       * Procedure Origin:                                       
 *       *                                                         
@@ -615,13 +615,13 @@ abrirform("frmsolvencia")
 *       *                                                         
 *       *********************************************************
 *
-PROCEDURE _4ug0njnwj
+PROCEDURE _4uk0xpnhb
 abrirform("frmnotadecredito")
 
 
 *       *********************************************************
 *       *                                                         
-*       * _4UG0NJNWK  ON SELECTION BAR 2 OF POPUP notadecred      
+*       * _4UK0XPNHC  ON SELECTION BAR 2 OF POPUP notadecred      
 *       *                                                         
 *       * Procedure Origin:                                       
 *       *                                                         
@@ -632,13 +632,13 @@ abrirform("frmnotadecredito")
 *       *                                                         
 *       *********************************************************
 *
-PROCEDURE _4ug0njnwk
+PROCEDURE _4uk0xpnhc
 abrirform("frmnotadecredito1")
 
 
 *       *********************************************************
 *       *                                                         
-*       * _4UG0NJNWL  ON SELECTION BAR 1 OF POPUP inventario      
+*       * _4UK0XPNHD  ON SELECTION BAR 1 OF POPUP inventario      
 *       *                                                         
 *       * Procedure Origin:                                       
 *       *                                                         
@@ -649,13 +649,13 @@ abrirform("frmnotadecredito1")
 *       *                                                         
 *       *********************************************************
 *
-PROCEDURE _4ug0njnwl
+PROCEDURE _4uk0xpnhd
 abrirform("frmentrada")
 
 
 *       *********************************************************
 *       *                                                         
-*       * _4UG0NJNWM  ON SELECTION BAR 1 OF POPUP alumnos         
+*       * _4UK0XPNHE  ON SELECTION BAR 1 OF POPUP alumnos         
 *       *                                                         
 *       * Procedure Origin:                                       
 *       *                                                         
@@ -666,13 +666,13 @@ abrirform("frmentrada")
 *       *                                                         
 *       *********************************************************
 *
-PROCEDURE _4ug0njnwm
+PROCEDURE _4uk0xpnhe
 abrirform("frmrepgeneral")
 
 
 *       *********************************************************
 *       *                                                         
-*       * _4UG0NJNWN  ON SELECTION BAR 2 OF POPUP alumnos         
+*       * _4UK0XPNHF  ON SELECTION BAR 2 OF POPUP alumnos         
 *       *                                                         
 *       * Procedure Origin:                                       
 *       *                                                         
@@ -683,13 +683,13 @@ abrirform("frmrepgeneral")
 *       *                                                         
 *       *********************************************************
 *
-PROCEDURE _4ug0njnwn
+PROCEDURE _4uk0xpnhf
 abrirform("frmrepmorosos")
 
 
 *       *********************************************************
 *       *                                                         
-*       * _4UG0NJNWO  ON SELECTION BAR 3 OF POPUP alumnos         
+*       * _4UK0XPNHG  ON SELECTION BAR 3 OF POPUP alumnos         
 *       *                                                         
 *       * Procedure Origin:                                       
 *       *                                                         
@@ -700,13 +700,13 @@ abrirform("frmrepmorosos")
 *       *                                                         
 *       *********************************************************
 *
-PROCEDURE _4ug0njnwo
+PROCEDURE _4uk0xpnhg
 abrirform("frmrecordatorio")
 
 
 *       *********************************************************
 *       *                                                         
-*       * _4UG0NJNWP  ON SELECTION BAR 4 OF POPUP alumnos         
+*       * _4UK0XPNHH  ON SELECTION BAR 4 OF POPUP alumnos         
 *       *                                                         
 *       * Procedure Origin:                                       
 *       *                                                         
@@ -717,13 +717,13 @@ abrirform("frmrecordatorio")
 *       *                                                         
 *       *********************************************************
 *
-PROCEDURE _4ug0njnwp
+PROCEDURE _4uk0xpnhh
 abrirform("frmrepgensaldos")
 
 
 *       *********************************************************
 *       *                                                         
-*       * _4UG0NJNWQ  ON SELECTION BAR 1 OF POPUP _4a30mkwvf      
+*       * _4UK0XPNHI  ON SELECTION BAR 1 OF POPUP _4a30mkwvf      
 *       *                                                         
 *       * Procedure Origin:                                       
 *       *                                                         
@@ -734,13 +734,13 @@ abrirform("frmrepgensaldos")
 *       *                                                         
 *       *********************************************************
 *
-PROCEDURE _4ug0njnwq
+PROCEDURE _4uk0xpnhi
 ABRIRFORM('frmreportebancos')
 
 
 *       *********************************************************
 *       *                                                         
-*       * _4UG0NJNWR  ON SELECTION BAR 2 OF POPUP _4a30mkwvf      
+*       * _4UK0XPNHJ  ON SELECTION BAR 2 OF POPUP _4a30mkwvf      
 *       *                                                         
 *       * Procedure Origin:                                       
 *       *                                                         
@@ -751,13 +751,13 @@ ABRIRFORM('frmreportebancos')
 *       *                                                         
 *       *********************************************************
 *
-PROCEDURE _4ug0njnwr
+PROCEDURE _4uk0xpnhj
 abrirform('frmrepvetas')
 
 
 *       *********************************************************
 *       *                                                         
-*       * _4UG0NJNWS  ON SELECTION BAR 3 OF POPUP _4a30mkwvf      
+*       * _4UK0XPNHK  ON SELECTION BAR 3 OF POPUP _4a30mkwvf      
 *       *                                                         
 *       * Procedure Origin:                                       
 *       *                                                         
@@ -768,13 +768,13 @@ abrirform('frmrepvetas')
 *       *                                                         
 *       *********************************************************
 *
-PROCEDURE _4ug0njnws
+PROCEDURE _4uk0xpnhk
 abrirform("frmrepproductos")
 
 
 *       *********************************************************
 *       *                                                         
-*       * _4UG0NJNWT  ON SELECTION BAR 1 OF POPUP reimpresio      
+*       * _4UK0XPNHL  ON SELECTION BAR 1 OF POPUP reimpresio      
 *       *                                                         
 *       * Procedure Origin:                                       
 *       *                                                         
@@ -785,13 +785,13 @@ abrirform("frmrepproductos")
 *       *                                                         
 *       *********************************************************
 *
-PROCEDURE _4ug0njnwt
+PROCEDURE _4uk0xpnhl
 abrirform('frmreimprimir')
 
 
 *       *********************************************************
 *       *                                                         
-*       * _4UG0NJNWU  ON SELECTION BAR 2 OF POPUP reimpresio      
+*       * _4UK0XPNHM  ON SELECTION BAR 2 OF POPUP reimpresio      
 *       *                                                         
 *       * Procedure Origin:                                       
 *       *                                                         
@@ -802,13 +802,13 @@ abrirform('frmreimprimir')
 *       *                                                         
 *       *********************************************************
 *
-PROCEDURE _4ug0njnwu
+PROCEDURE _4uk0xpnhm
 abrirform('frmreimprimirnotac')
 
 
 *       *********************************************************
 *       *                                                         
-*       * _4UG0NJNWV  ON SELECTION BAR 3 OF POPUP reimpresio      
+*       * _4UK0XPNHN  ON SELECTION BAR 3 OF POPUP reimpresio      
 *       *                                                         
 *       * Procedure Origin:                                       
 *       *                                                         
@@ -819,5 +819,5 @@ abrirform('frmreimprimirnotac')
 *       *                                                         
 *       *********************************************************
 *
-PROCEDURE _4ug0njnwv
+PROCEDURE _4uk0xpnhn
 abrirform('frmreimprimirnotad')

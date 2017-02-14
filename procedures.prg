@@ -319,7 +319,7 @@ temp1="cursorx." + campos(j)
 &temp=&temp1
 ENDFOR
 
-&formname..editar=2
+
 RETURN .T.
 
 ENDFUNC
