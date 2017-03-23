@@ -3,7 +3,7 @@ SET DATE BRITISH
 SET SEPARATOR TO ","
 Set Decimals To 2
 
-_Screen.Visible = .F.
+
 PUBLIC odbcnombre,odbcclave,odbcusuario,odbcdatabase,npath,frmmain,frmmenu,elgue
 PUBLIC gnx
 PUBLIC esteform
@@ -40,7 +40,7 @@ odbcusuario=ALLTRIM(SUBSTR(initarray(5),1,29))
 odbcdatabase=ALLTRIM(SUBSTR(initarray(3),1,29))
 
 Store SQLConnect(odbcnombre, odbcusuario, odbcclave) To gnx
-
+SQLSETPROP(gnx,"DispWarnings",.T.)
 
 
 
@@ -63,7 +63,7 @@ periact=perx.idperiodo
 USE IN perx
 
 DO FORM "frmmain.Scx" NAME frmmain
-_Screen.Visible= .F.
+
 Read Events
 
 Close All

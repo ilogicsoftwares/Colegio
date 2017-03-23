@@ -1,10 +1,12 @@
 PUBLIC gnx
 Store SQLConnect('colegio', 'root', '693693123456') To gnx
+SQLSETPROP(gnx,"DispWarnings",.T.)
 SET DEFAULT TO "c:\colegio\"
 SET PROCEDURE TO procedures
 procedure ejecutarsqls
 LPARAMETERS sfile,dbmsf
 Store SQLConnect('colegio', 'root', '693693123456') To gnx2
+SQLSETPROP(gnx2,"DispWarnings",.T.)
 SQLEXEC(gnx2,'use ' + db)
 sscript=FILETOSTR(sfile)
 
@@ -108,6 +110,7 @@ ENDFUNC
 FUNCTION guardardatosenform
 LPARAMETERS tabla,nformulario
 Store SQLConnect('colegio', 'root', '693693123456') To gnx2
+SQLSETPROP(gnx2,"DispWarnings",.T.)
 loscampos=""
 losvalores=""
 separador=","
@@ -319,7 +322,7 @@ temp1="cursorx." + campos(j)
 &temp=&temp1
 ENDFOR
 
-&formname..editar=2
+
 RETURN .T.
 
 ENDFUNC
@@ -354,6 +357,7 @@ ENDPROC
 PROCEDURE crearformulario()
 LPARAMETERS tabla
 Store SQLConnect('colegio', 'root', '693693123456') To gnx3
+SQLSETPROP(gnx3,"DispWarnings",.T.)
 SET DEFAULT TO c:\colegio
 CREATE form ? as formn FROM clases NOWAIT save
 
@@ -536,6 +540,33 @@ Endif
 ENDDO
 SQLEXEC(gnx,"update factura set estatus=1 where idfactura=?nfactura")
 RETURN 0
+ENDFUNC
+
+FUNCTION crearnotamen()
+LPARAMETERS factura
+facts="FAC"+TRANSFORM(factura)
+SQLEXEC(gnx,"select * from mensualidad where idtran=?facts and saldo<0","mens")
+SELECT mens
+GO top
+mensuales=""
+FOR i=1 TO RECCOUNT('mens')
+mensuales=mensuales + stringmes(mens.mes)
+IF i<>RECCOUNT('mens')
+mensuales=mensuales + ","
+skip
+ENDIF
+ 
+ENDFO
+concepto="NOTA DE CREDITO POR CONCEPTO DE PAGO EXCEDENTE DE MENSUALIDADES: " + mensuales
+SELECT SUM(mens.saldo) as Total FROM mens INTO CURSOR tot
+SQLEXEC(gnx,"insert into notadecredito (idalumno,fecha,concepto,realizadopor,monto,idfactura,saldo) values (?mens.idalumno,?DATE(),?concepto,'Sytem',?tot.total,?factura,?tot.total)")
+SQLEXEC(gnx,"Select * from notadecredito where idfactura=?factura","notau")
+SELECT mens
+GO top
+
+idxnota=notau.idnotacredito
+tipoimp=1
+Report Form  c:\colegio\notadecredito.frx To Printer Prompt Preview
 ENDFUNC
 
 
