@@ -18,7 +18,9 @@ odbcnombre=""
 odbcclave=""
 odbcusuario=""
 odbcdatabase=""
-initf=FILETOSTR('c:\colegio\firstini.cfg')
+*SET DEFAULT TO "\colegio1.0"
+SET DEFAULT TO ADDBS(JUSTPATH(SYS(16)))
+initf=FILETOSTR('firstini.cfg')
 
 ALINES(initarray,initf)
 
@@ -40,8 +42,8 @@ odbcusuario=ALLTRIM(SUBSTR(initarray(5),1,29))
 odbcdatabase=ALLTRIM(SUBSTR(initarray(3),1,29))
 
 Store SQLConnect(odbcnombre, odbcusuario, odbcclave) To gnx
-SQLSETPROP(gnx,"DispWarnings",.T.)
 
+SQLSETPROP(gnx,"DispWarnings",.T.)
 
 
 
